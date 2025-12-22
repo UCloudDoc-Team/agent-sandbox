@@ -162,12 +162,12 @@ python your_e2b_script.py
 
 !> **API Key 区别**：E2B 兼容模式使用 `E2B_API_KEY` 环境变量，而原生 UCloud SDK 使用 `AGENTBOX_API_KEY`。请确保使用正确的环境变量。
 
-?> **推荐**：如果您是新用户，建议直接使用 [UCloud Sandbox 原生 SDK](/agent-sandbox/docs/sdk/00-quick-start.md)，以获得更好的功能支持和技术支持体验。
+?> **推荐**：如果您是新用户，建议直接使用 [UCloud Sandbox 原生 SDK](00-quick-start.md)，以获得更好的功能支持和技术支持体验。
 
 ---
 
 ## 下一步
 
-- [SDK 快速开始](/agent-sandbox/docs/sdk/00-quick-start.md) - 使用原生 UCloud Sandbox SDK
-- [沙箱生命周期](/agent-sandbox/docs/sdk/sandbox/01-lifecycle.md) - 了解沙箱管理
-- [命令执行](/agent-sandbox/docs/sdk/commands/01-overview.md) - 详细的命令执行指南
+- [SDK 快速开始](00-quick-start.md) - 使用原生 UCloud Sandbox SDK
+- [沙箱生命周期](sandbox/01-lifecycle.md) - 了解沙箱管理
+- [命令执行](commands/01-overview.md) - 详细的命令执行指南
