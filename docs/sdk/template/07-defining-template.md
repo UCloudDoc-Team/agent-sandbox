@@ -1,16 +1,8 @@
 # 定义模板
 
-> 如何创建您自己的模板
+<subtitle>掌握模板定义的完整 API，包括文件操作、包安装及命令执行。</subtitle>
 
-### 配置参数
-
-在使用 SDK 之前，请确保配置以下环境变量：
-
-- 获取 API Key: [https://console.ucloud.cn/modelverse/experience/api-keys](https://console.ucloud.cn/modelverse/experience/api-keys)
-
-```bash
-export AGENTBOX_API_KEY=your_api_key
-```
+?> **前置条件**：请先完成 [API Key 配置](/agent-sandbox/docs/product/01-prerequisites.md)
 
 ### 方法链
 
@@ -61,13 +53,13 @@ template.copy("package.json", "/app/package.json")
 # 复制多个文件到同一目标
 template.copy(["file1", "file2"], "/app/file")
 
-# 使用 copy_items 进行多重复制操作
+# 使用 copy_items 批量定义复制规则
 template.copy_items([
     {"src": "src/", "dest": "/app/src/"},
     {"src": "package.json", "dest": "/app/package.json"},
 ])
 
-# 带有用户和模式选项的复制
+# 指定用户与文件权限（mode）
 template.copy("config.json", "/app/config.json", user="appuser", mode=0o644)
 ```
 
@@ -109,7 +101,7 @@ template = Template()
 # 安装 Python 包
 template.pip_install(["requests", "pandas", "numpy"])
 
-# 安装 Python 包（用户）
+# 为当前用户安装（非全局）
 template.pip_install(["requests", "pandas", "numpy"], g=False)
 
 # 安装 Node.js 包

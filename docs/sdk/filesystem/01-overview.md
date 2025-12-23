@@ -1,17 +1,9 @@
 # 文件系统
 <subtitle>在隔离的沙箱环境中管理文件与目录，支持各种读写及同步操作。</subtitle>
 
-## 配置环境
+?> **前置条件**：请先完成 [API Key 配置](/agent-sandbox/docs/product/01-prerequisites.md)
 
-在使用 SDK 之前，请确保已配置 `AGENTBOX_API_KEY` 环境变量。
-
-?> 您可以在 [控制台 API 密钥页面](https://console.ucloud.cn/modelverse/experience/api-keys) 获取您的秘钥。
-
-```bash
-export AGENTBOX_API_KEY=your_api_key
-```
-
-每个 UCloud Sandbox 沙箱都拥有独立的、隔离的文件系统，专为 Agent 的临时计算任务设计。通过文件系统 API，您可以高效地管理输入数据、输出结果以及任务中间文件。
+每个沙箱都拥有独立的、隔离的文件系统，专为 Agent 的临时计算任务设计。通过文件系统 API，您可以高效地管理输入数据、输出结果以及任务中间文件。
 
 ## 核心功能
 

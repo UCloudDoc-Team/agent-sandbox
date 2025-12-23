@@ -1,22 +1,16 @@
-# 日志记录
+# 构建日志
 
-> 如何查看模板构建的日志
+<subtitle>实时获取模板构建日志并自定义日志处理逻辑。</subtitle>
 
-### 配置参数
+?> **前置条件**：请先完成 [API Key 配置](/agent-sandbox/docs/product/01-prerequisites.md)
 
-在使用 SDK 之前，请确保配置以下环境变量：
+构建过程中会通过 `on_build_logs` 回调实时推送构建日志。您可以使用默认的日志处理器，也可以自定义处理逻辑。
 
-- 获取 API Key: [https://console.ucloud.cn/modelverse/experience/api-keys](https://console.ucloud.cn/modelverse/experience/api-keys)
+?> 构建入口与状态轮询请参阅：[构建模板](/agent-sandbox/docs/sdk/template/09-build.md)
 
-```bash
-export AGENTBOX_API_KEY=your_api_key
-```
+## 默认日志处理器
 
-您可以使用 SDK 检索构建日志。
-
-## 默认日志记录器
-
-我们提供了一个默认日志记录器，您可以使用它按级别过滤日志：
+SDK 提供 `default_build_logger` 函数，可按级别过滤并输出日志：
 
 ```python
 from ucloud_sandbox import Template, default_build_logger
@@ -30,9 +24,9 @@ Template.build(
 )
 ```
 
-## 自定义日志记录器
+## 自定义日志处理器
 
-您可以自定义日志的处理方式：
+您可以提供一个回调函数来完全自定义日志的处理逻辑：
 
 ```python
 import sys
@@ -86,7 +80,7 @@ class LogEntryEnd(LogEntry):
     level: LogEntryLevel = "debug"
 ```
 
-除了 `LogEntry` 类型外，还有 `LogEntryStart` 和 `LogEntryEnd` 类型，分别指示构建过程的开始和结束。它们的默认日志级别是 `debug`，您可以像这样使用它们：
+回调函数接收的 `log_entry` 对象包含多种类型。除了通用的 `LogEntry`，还有 `LogEntryStart` 和 `LogEntryEnd`，它们分别标志着构建流程的开始和结束（默认级别为 `debug`）。您可以利用类型检查来处理这些特殊事件：
 
 ```python
 from ucloud_sandbox import LogEntryStart, LogEntryEnd

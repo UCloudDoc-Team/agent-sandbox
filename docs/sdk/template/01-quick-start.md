@@ -1,17 +1,9 @@
 # 模板快速开始
 <subtitle>学习如何定义、构建并部署自定义沙箱模板，快速定制 Agent 的运行环境。</subtitle>
 
-## 配置环境
+?> **前置条件**：请先完成 [API Key 配置](/agent-sandbox/docs/product/01-prerequisites.md)
 
-在使用 SDK 之前，请确保已配置 `AGENTBOX_API_KEY` 环境变量。
-
-?> 您可以在 [控制台 API 密钥页面](https://console.ucloud.cn/modelverse/experience/api-keys) 获取您的秘钥。
-
-```bash
-export AGENTBOX_API_KEY=your_api_key
-```
-
-模板（Template）是沙箱的蓝图。它允许您预装软件、配置环境变量、预置文件，以及设置启动自运行命令。通过模板，您可以确保 Agent 每次启动时都处于完全就绪的就绪环境，无需额外等待安装过程。
+模板（Template）是沙箱的蓝图。它允许您预装软件、配置环境变量、预置文件，以及设置启动命令与就绪检查。通过模板，您可以确保 Agent 每次启动时都处于完全就绪的环境，无需额外等待安装过程。
 
 ---
 
