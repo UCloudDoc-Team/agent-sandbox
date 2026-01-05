@@ -1,6 +1,7 @@
 
 
 * [概览](/agent-sandbox/README.md)
+* [配额说明](/agent-sandbox/docs/sdk/sandbox/rate-limit.md)
 * 入门
     * [前置条件与认证](/agent-sandbox/docs/product/01-prerequisites.md)
     * [SDK 快速开始](/agent-sandbox/docs/sdk/00-quick-start.md)
@@ -21,7 +22,6 @@
         * [数据持久化](/agent-sandbox/docs/sdk/sandbox/04-persistence.md)
         * [网络访问](/agent-sandbox/docs/sdk/sandbox/10-internet-access.md)
         * [指标监控](/agent-sandbox/docs/sdk/sandbox/05-metrics.md)
-        * [频率限制](/agent-sandbox/docs/sdk/sandbox/12-rate-limit.md)
     * 命令执行
         * [概述](/agent-sandbox/docs/sdk/commands/01-overview.md)
         * [流式输出](/agent-sandbox/docs/sdk/commands/02-streaming.md)
