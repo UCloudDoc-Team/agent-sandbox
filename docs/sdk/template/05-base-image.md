@@ -2,6 +2,8 @@
 
 <subtitle>为您的模板选择或自定义基础镜像。</subtitle>
 
+!> 您的基础镜像必须是基于**Ubuntu**或**Debain**的，否则构建镜像将会失败。
+
 ## 配置环境
 
 在使用 SDK 之前，请确保已配置 `AGENTBOX_API_KEY` 环境变量。
@@ -87,16 +89,16 @@ template = (
 
 ### Dockerfile 指令支持
 
-| 指令 | 支持情况 | 行为 |
-| :--- | :---: | :--- |
-| `FROM` | ✅ | 设置基础镜像 |
-| `RUN` | ✅ | 转换为 `run_cmd()` |
-| `COPY` / `ADD` | ✅ | 转换为 `copy()` |
-| `WORKDIR` | ✅ | 转换为 `set_workdir()` |
-| `USER` | ✅ | 转换为 `set_user()` |
-| `ENV` | ✅ | 转换为 `set_envs()`；支持 `ENV key=value` 和 `ENV key value` 格式 |
-| `CMD` / `ENTRYPOINT` | ✅ | 转换为 `set_start_cmd()`，并将 20 秒超时作为就绪命令 |
-| `EXPOSE` | ❌ | 跳过（不支持） |
-| `VOLUME` | ❌ | 跳过（不支持） |
+| 指令                 | 支持情况 | 行为                                                              |
+| :------------------- | :------: | :---------------------------------------------------------------- |
+| `FROM`               |    ✅    | 设置基础镜像                                                      |
+| `RUN`                |    ✅    | 转换为 `run_cmd()`                                                |
+| `COPY` / `ADD`       |    ✅    | 转换为 `copy()`                                                   |
+| `WORKDIR`            |    ✅    | 转换为 `set_workdir()`                                            |
+| `USER`               |    ✅    | 转换为 `set_user()`                                               |
+| `ENV`                |    ✅    | 转换为 `set_envs()`；支持 `ENV key=value` 和 `ENV key value` 格式 |
+| `CMD` / `ENTRYPOINT` |    ✅    | 转换为 `set_start_cmd()`，并将 20 秒超时作为就绪命令              |
+| `EXPOSE`             |    ❌    | 跳过（不支持）                                                    |
+| `VOLUME`             |    ❌    | 跳过（不支持）                                                    |
 
 > 不支持多阶段 Dockerfile。
