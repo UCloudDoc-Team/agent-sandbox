@@ -6,6 +6,7 @@
     * [前置条件与认证](/agent-sandbox/docs/product/01-prerequisites.md)
     * [SDK 快速开始](/agent-sandbox/docs/sdk/00-quick-start.md)
     * [CLI 指南](/agent-sandbox/docs/cli/cli.md)
+    * [切换地域](/agent-sandbox/docs/region.md)
     * [E2B 兼容模式](/agent-sandbox/docs/sdk/e2b-compatibility.md)
 * 核心概念
     * [概念速览](/agent-sandbox/docs/product/02-concepts.md)
